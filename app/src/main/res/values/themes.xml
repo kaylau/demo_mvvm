@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="styleMvvm" parent="Theme.AppCompat.Light.NoActionBar"><!-- 右进右出动画 -->
+        <item name="colorPrimary">#ffffffff</item> <!--Appbar背景色-->
+        <item name="colorPrimaryDark">#ffffffff</item> <!--状态栏颜色-->
+        <item name="colorAccent">@color/teal_200</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <!--设置为false，防止虚拟键遮挡底部导航栏-->
+        <item name="android:windowTranslucentNavigation">false</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.styleMvvm">
+        <!-- 这里的trans自己写一个#00000000即可-->
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+
+</resources>

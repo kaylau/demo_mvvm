@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="me.tatarka.bindingcollectionadapter2.LayoutManagers" />
+        <import type="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <variable
+            name="vm"
+            type="com.kay.demo.mvvm.vm.HomeVm" />
+
+    </data>
+
+
+    <com.kay.demo.views.refresh.CommonRefreshLayout
+        android:id="@+id/refreshView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.youth.banner.Banner
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="600mm"
+                android:background="#333333"
+                app:banner_indicator_gravity="center"
+                app:banner_indicator_marginBottom="55mm"
+                app:banner_indicator_normal_color="#999999"
+                app:banner_indicator_normal_width="18mm"
+                app:banner_indicator_selected_color="@color/white"
+                app:banner_indicator_selected_width="18mm" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45mm"
+                android:layout_marginTop="30mm"
+                android:layout_marginRight="45mm"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_notifications" />
+
+                <com.youth.banner.Banner
+                    android:id="@+id/bannerMsg"
+                    android:layout_width="match_parent"
+                    android:layout_height="60mm"
+                    android:layout_marginLeft="30mm"
+                    android:background="@drawable/bg_6ba1db_r5"
+                    android:paddingLeft="30mm"
+                    app:banner_loop_time="1000"
+                    app:banner_orientation="vertical" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="15mm"
+                android:text="@{vm.value}" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:background="@color/purple_200"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30mm"
+                android:layout_marginTop="15mm"
+                android:layout_marginRight="30mm"
+                android:layout_marginBottom="60mm"
+                app:itemBinding="@{vm.item}"
+                app:items="@{vm.itemList}"
+                app:layoutManager="@{LayoutManagers.staggeredGrid(2, LinearLayoutManager.VERTICAL)}" />
+
+        </LinearLayout>
+
+    </com.kay.demo.views.refresh.CommonRefreshLayout>
+
+</layout>

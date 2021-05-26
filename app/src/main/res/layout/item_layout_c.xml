@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.kay.demo.net.model.respone.ListBean" />
+
+        <import type="java.util.List" />
+
+        <variable
+            name="listData"
+            type="List&lt;ListBean>" />
+
+        <variable
+            name="item"
+            type="ListBean" />
+
+        <variable
+            name="listener"
+            type="com.kay.demo.mvvm.vm.HomeVm.OnItemClickListener" />
+
+    </data>
+
+    <com.lihang.ShadowLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        app:hl_cornerRadius="45mm"
+        app:hl_shadowColor="#330A0A0A"
+        app:hl_shadowLimit="30mm"
+        app:hl_shadowOffsetY="6mm">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="390mm"
+            android:layout_margin="24mm"
+            android:background="@color/teal_200"
+            android:padding="30mm">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@color/colorPrimary"
+                android:onClick="@{(view)->listener.onItemClick(item)}"
+                android:padding="36mm">
+
+                <ImageView
+                    android:id="@+id/iv_img"
+                    android:layout_width="150mm"
+                    android:layout_height="150mm"
+                    app:imgUrl="@{item.url}" />
+
+                <TextView
+                    android:id="@+id/tab_item_text"
+                    android:layout_width="150mm"
+                    android:layout_height="150mm"
+                    android:layout_marginLeft="30mm"
+                    android:layout_toRightOf="@+id/iv_img"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:text="@{item.name}"
+                    android:textColor="@color/color_80000000"
+                    android:textSize="39mm" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv_img"
+                    android:layout_marginLeft="10mm"
+                    android:layout_marginTop="18mm"
+                    android:singleLine="true"
+                    android:text="@{item.name}"
+                    android:textColor="@color/color_80000000"
+                    android:textSize="39mm" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv_img"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="60mm"
+                    android:text="item_layout_c" />
+
+            </RelativeLayout>
+
+        </FrameLayout>
+
+    </com.lihang.ShadowLayout>
+
+</layout>

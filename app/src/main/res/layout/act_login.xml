@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.kay.demo.mvvm.vm.LoginVm" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_bk"
+                android:hint="register name"
+                android:maxLength="2000"
+                android:padding="15dp"
+                android:text="@={vm.registerName}"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_bk"
+                android:hint="register pwd"
+                android:maxLength="2000"
+                android:padding="15dp"
+                android:text="@={vm.registerPwd}"
+                android:textColor="@color/black" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="20dp"
+                android:background="@color/teal_700"
+                android:onClick="@{()->vm.register()}"
+                android:text="register" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_bk"
+                android:hint="login name"
+                android:maxLength="2000"
+                android:padding="15dp"
+                android:text="@={vm.loginName}"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_bk"
+                android:hint="login pwd"
+                android:maxLength="2000"
+                android:padding="15dp"
+                android:text="@={vm.loginPwd}"
+                android:textColor="@color/black" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="20dp"
+                android:background="@color/teal_700"
+                android:onClick="@{()->vm.login()}"
+                android:text="login" />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:background="@color/teal_700"
+            android:onClick="@{(view)->vm.mainAct(view)}"
+            android:text="Main activity" />
+
+    </LinearLayout>
+
+</layout>

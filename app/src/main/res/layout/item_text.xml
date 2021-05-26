@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.kay.demo.net.model.respone.ItemData" />
+
+        <variable
+            name="listener"
+            type="com.kay.demo.adapter.TextAdapter.OnItemClick" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15mm"
+        android:background="@color/color_1A000000"
+        android:onClick="@{(view)->listener.itemClick(item)}"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="150mm"
+            android:layout_height="150mm"
+            app:imgUrl="@{item.imageId}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginLeft="45mm"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@{item.name}"
+            android:textSize="60mm" />
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,12 @@
+ext {
+
+    android = [
+            // 签名store
+            storeFile           : "../qwe.jks",
+            storePassword       : "123456",
+            keyAlias            : "key_qwe",
+            keyPassword         : "123456",
+
+
+    ]
+}

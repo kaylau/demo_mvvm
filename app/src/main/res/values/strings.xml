@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">simple-mvvm</string>
+
+    <!--    网络错误提示 开始-->
+
+    <!--    网络错误-->
+    <string name="network_error">Network Error</string>
+    <!--    网络连接超时-->
+    <string name="network_timeout">Network connection timed out</string>
+    <!--    系统异常-->
+    <string name="network_system_error">Server Error</string>
+    <!--    响应数据解析错误-->
+    <string name="parse_error">Parse error</string>
+    <!--    网络连接错误，请重试-->
+    <string name="network_socket_error">Network connection error, please try again</string>
+    <!--    网络连接错误-->
+    <string name="network_socket_timeout">Network connection error</string>
+    <!--    证书验证失败-->
+    <string name="network_ssl_error">Certificate verification failed</string>
+    <!--    网络错误，请切换网络重试-->
+    <string name="network_unknown_host">Network error, please switch network and try again</string>
+    <!--    数字格式化异常-->
+    <string name="network_number_format_error">Number formatting abnormal</string>
+    <!--    未知错误-->
+    <string name="network_unknown_error">unknown error</string>
+
+
+    <!--    网络错误提示 结束-->
+
+
+
+</resources>
