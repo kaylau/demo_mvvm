@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.kay.demo.mvvm.vm.WebViewVm" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150mm"
+        android:background="@color/color_80000000">
+
+        <ImageView
+            android:id="@+id/title_left_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="45mm"
+            android:src="@mipmap/ic_back_white" />
+
+        <TextView
+            android:id="@+id/center_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:text="@{vm.title}"
+            android:textSize="54mm"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</layout>

@@ -27,6 +27,7 @@
 
         <activity android:name=".mvvm.view.act.MainActivity"/>
         <activity android:name=".mvvm.view.act.LoginAct"/>
+        <activity android:name=".mvvm.view.act.WebViewAct"/>
 
         <meta-data
             android:name="CHANNEL"

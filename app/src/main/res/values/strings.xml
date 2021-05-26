@@ -2,7 +2,6 @@
     <string name="app_name">simple-mvvm</string>
 
     <!--    网络错误提示 开始-->
-
     <!--    网络错误-->
     <string name="network_error">Network Error</string>
     <!--    网络连接超时-->
@@ -23,10 +22,11 @@
     <string name="network_number_format_error">Number formatting abnormal</string>
     <!--    未知错误-->
     <string name="network_unknown_error">unknown error</string>
-
-
     <!--    网络错误提示 结束-->
 
 
+    <string name="ssl_error">Secure connection could not be established.</string>
+    <string name="continueStr">Continue</string>
+    <string name="cancel">Cancel</string>
 
 </resources>

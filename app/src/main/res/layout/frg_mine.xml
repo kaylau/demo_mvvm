@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -9,22 +10,45 @@
 
     </data>
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <FrameLayout
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true">
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="60mm"
+            android:text="@{vm.value}" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{vm.value}" />
+        <com.lihang.ShadowLayout
+            android:layout_width="match_parent"
+            android:layout_height="150mm"
+            android:layout_margin="60mm"
+            app:hl_cornerRadius="30mm"
+            app:hl_shadowColor="#330A0A0A"
+            app:hl_shadowLimit="6mm"
+            app:hl_shadowOffsetY="6mm">
 
-        </FrameLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/color_ff8800"
+                android:onClick="@{(view)->vm.clickWebView(view)}"
+                android:gravity="center"
+                android:orientation="vertical">
 
-    </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="webView 页面"
+                    android:textSize="60mm" />
+
+            </LinearLayout>
+
+        </com.lihang.ShadowLayout>
+
+    </LinearLayout>
 
 </layout>

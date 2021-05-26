@@ -32,14 +32,18 @@ abstract class BaseAct<VM : BaseViewModel<*>, DB : ViewDataBinding> : AppCompatA
 //        ImmersionBar.with(this).reset().fitsSystemWindows(false)
 //            .navigationBarColor(R.color.black).statusBarDarkFont(false, 0.2f).init()
 
+        initImmersionBar()
+
+        initData()
+    }
+
+    open fun initImmersionBar() {
         ImmersionBar.with(this)
             .fitsSystemWindows(true)
             .statusBarColor(R.color.color_1A000000)
             .navigationBarColor(R.color.black)
             .statusBarDarkFont(true, 0.2f)
             .init()
-
-        initData()
     }
 
     abstract fun initData()
