@@ -1,4 +1,4 @@
-package com.kay.demo.views.dialog.bottom.bottom;
+package com.kay.demo.views.dialog.bottom;
 
 import android.content.Context;
 import android.view.View;

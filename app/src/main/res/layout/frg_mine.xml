@@ -95,6 +95,49 @@
 
         <com.lihang.ShadowLayout
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30mm"
+            app:hl_cornerRadius="30mm"
+            app:hl_shadowColor="#330A0A0A"
+            app:hl_shadowLimit="6mm"
+            app:hl_shadowOffsetY="6mm">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/color_ff8800"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="20mm"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:onClick="@{(view)->vm.selectGenderWheelView(view)}"
+                    android:text="点击选择性别(WheelView): "
+                    android:textColor="@color/white"
+                    android:textSize="60mm" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="30mm"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center_horizontal"
+                    android:text="@{vm.genderWheelView}"
+                    android:textColor="@color/black"
+                    android:textSize="60mm" />
+
+            </LinearLayout>
+
+        </com.lihang.ShadowLayout>
+
+        <com.lihang.ShadowLayout
+            android:layout_width="match_parent"
             android:layout_height="150mm"
             android:layout_margin="30mm"
             app:hl_cornerRadius="30mm"

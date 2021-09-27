@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_ffffff_r10_top"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="45mm"
+            android:text="@string/DialogButton_A0"
+            android:textColor="#2A303C"
+            android:textSize="45mm" />
+
+        <TextView
+            android:id="@+id/btn_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:padding="45mm"
+            android:text="@string/DialogButton_C0"
+            android:textColor="#2A303C"
+            android:textSize="45mm" />
+
+
+    </RelativeLayout>
+
+    <View style="@style/style_line" />
+
+    <com.contrarywind.view.WheelView
+        android:id="@+id/wheelview"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>

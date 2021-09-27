@@ -12,7 +12,8 @@ import com.kay.demo.R
 import com.kay.demo.base.BaseViewModel
 import com.kay.demo.mvvm.model.MineModel
 import com.kay.demo.mvvm.view.act.WebViewAct
-import com.kay.demo.views.dialog.bottom.bottom.BottomSelectUtil
+import com.kay.demo.views.dialog.WheelViewDialog
+import com.kay.demo.views.dialog.bottom.BottomSelectUtil
 import java.util.*
 
 
@@ -45,6 +46,22 @@ class MineVm : BaseViewModel<MineModel>() {
                 ""
         ) { select ->
             gender.value = select
+        }
+    }
+
+    var genderWheelView = MutableLiveData<String>()
+    fun selectGenderWheelView(view: View) {
+        val arrayListOf = arrayListOf<String>()
+        arrayListOf.add("Male")
+        arrayListOf.add("Female")
+        arrayListOf.add("Androgynous")
+        arrayListOf.add("Cis Woman")
+        arrayListOf.add("Cis Man")
+        WheelViewDialog.getInstance().show(
+                view.context,
+                arrayListOf,
+        ) { select ->
+            genderWheelView.value = select
         }
     }
 
