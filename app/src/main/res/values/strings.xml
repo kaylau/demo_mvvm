@@ -29,4 +29,8 @@
     <string name="continueStr">Continue</string>
     <string name="cancel">Cancel</string>
 
+    <string name="DialogButton_A0">Cancel</string>
+    <string name="DialogButton_B0">Confirm</string>
+    <string name="DialogButton_C0">OK</string>
+
 </resources>

@@ -180,6 +180,9 @@ dependencies {
     implementation 'me.tatarka.bindingcollectionadapter2:bindingcollectionadapter:2.2.0'
     implementation 'me.tatarka.bindingcollectionadapter2:bindingcollectionadapter-recyclerview:2.2.0'
 
+    // 时间选择
+    implementation 'com.contrarywind:Android-PickerView:4.1.9'
+
 }
 
 // 生成打包时间
