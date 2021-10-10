@@ -14,7 +14,7 @@ import android.view.KeyEvent
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.*
-import com.gyf.barlibrary.ImmersionBar
+import com.gyf.immersionbar.ImmersionBar
 import com.kay.demo.R
 import com.kay.demo.base.BaseAct
 import com.kay.demo.databinding.ActWebviewBinding

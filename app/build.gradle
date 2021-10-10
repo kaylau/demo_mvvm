@@ -15,41 +15,41 @@ android {
         enabled = true
     }
 
-    compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.kay.mvvm"
-        minSdkVersion 19
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        flavorDimensions rootProject.ext.android.versionName
         multiDexEnabled true
-        flavorDimensions "1.0"
     }
 
     signingConfigs {
         debug {
             // No debug config
             // 签名store文件路径
-            storeFile file(rootProject.ext.android.storeFile)
+            storeFile file(rootProject.ext.signing.storeFile)
             // 签名store文件的密码
-            storePassword rootProject.ext.android.storePassword
+            storePassword rootProject.ext.signing.storePassword
             // 别名
-            keyAlias rootProject.ext.android.keyAlias
+            keyAlias rootProject.ext.signing.keyAlias
             // 别名的密码
-            keyPassword rootProject.ext.android.keyPassword
+            keyPassword rootProject.ext.signing.keyPassword
         }
         // 正式版
         release {
             // 签名store文件路径
-            storeFile file(rootProject.ext.android.storeFile)
+            storeFile file(rootProject.ext.signing.storeFile)
             // 签名store文件的密码
-            storePassword rootProject.ext.android.storePassword
+            storePassword rootProject.ext.signing.storePassword
             // 别名
-            keyAlias rootProject.ext.android.keyAlias
+            keyAlias rootProject.ext.signing.keyAlias
             // 别名的密码
-            keyPassword rootProject.ext.android.keyPassword
+            keyPassword rootProject.ext.signing.keyPassword
         }
     }
 
@@ -105,7 +105,6 @@ android {
     productFlavors {
         // 渠道标识
         google {}
-        baidu {}
         xiaomi {}
     }
 
@@ -121,7 +120,7 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3"
 
     //版本要与gradle版本一致
-    kapt  "com.android.databinding:compiler:4.1.2"
+    kapt "com.android.databinding:compiler:4.1.2"
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
@@ -158,11 +157,11 @@ dependencies {
     implementation 'me.jessyan:autosize:1.2.1'
 
     // 沉浸式状态栏
-    implementation 'com.gyf.immersionbar:immersionbar:2.3.3'
+    implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
 
     // 动态权限申请
-    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.11'
+    implementation 'com.github.tbruyelle:rxpermissions:0.12'
+    implementation 'io.reactivex.rxjava3:rxjava:3.0.4'
 
     implementation 'com.github.lihangleo2:ShadowLayout:3.2.0'
 
@@ -204,5 +203,32 @@ def getAppName() {
     } catch (e) {
         println(e)
         return "AppName"
+    }
+}
+
+tasks.whenTaskAdded { task ->
+    if (task.name.startsWith("bundle")) {
+        def renameTaskName = "rename${task.name.capitalize()}Aab"
+        def releaseGoogleAab = "app-google-release.aab"
+        def releaseGooglePath = "googleRelease"
+
+        def xiaomiReleaseAab = "app-xiaomi-release.aab"
+        def xiaomiReleasePath = "xiaomiRelease"
+
+        tasks.create(renameTaskName, Copy) {
+            def googlePath = "${buildDir}/outputs/bundle/${releaseGooglePath}/"
+            from(googlePath)
+            include releaseGoogleAab
+            destinationDir file("${buildDir}/outputs/renamedBundle/")
+            rename releaseGoogleAab, "${rootProject.getName()}_${releaseTime()}_${"google"}.aab"
+
+            def xiaoMiPath = "${buildDir}/outputs/bundle/${xiaomiReleasePath}/"
+            from(xiaoMiPath)
+            include xiaomiReleaseAab
+            destinationDir file("${buildDir}/outputs/renamedBundle/")
+            rename xiaomiReleaseAab, "${rootProject.getName()}_${releaseTime()}_${"xiaomi"}.aab"
+        }
+
+        task.finalizedBy(renameTaskName)
     }
 }

@@ -88,14 +88,6 @@
 
         </LinearLayout>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_margin="20dp"
-            android:background="@color/teal_700"
-            android:onClick="@{(view)->vm.mainAct(view)}"
-            android:text="Main activity" />
-
     </LinearLayout>
 
 </layout>

@@ -1,12 +1,22 @@
 ext {
 
     android = [
+            compileSdkVersion: 30,
+            buildToolsVersion: "30.0.3",
+
+            minSdkVersion    : 21,
+            targetSdkVersion : 30,
+
+            versionCode      : 100,
+            versionName      : '1.0.0',
+            applicationId    : 'com.kay.mvvm',
+    ]
+
+    signing = [
             // 签名store
             storeFile           : "../qwe.jks",
             storePassword       : "123456",
             keyAlias            : "key_qwe",
             keyPassword         : "123456",
-
-
     ]
 }

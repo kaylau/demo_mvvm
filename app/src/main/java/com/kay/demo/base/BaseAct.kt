@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProvider
-import com.gyf.barlibrary.ImmersionBar
+import com.gyf.immersionbar.ImmersionBar
 import com.kay.demo.R
 import com.kay.demo.net.util.StateConstants
 import com.kay.demo.utils.CustomToast
@@ -40,9 +40,9 @@ abstract class BaseAct<VM : BaseViewModel<*>, DB : ViewDataBinding> : AppCompatA
     open fun initImmersionBar() {
         ImmersionBar.with(this)
             .fitsSystemWindows(true)
-            .statusBarColor(R.color.color_1A000000)
-            .navigationBarColor(R.color.black)
-            .statusBarDarkFont(true, 0.2f)
+            .statusBarColor(R.color.color_ff8800)
+            .navigationBarColor(R.color.colorAccent)
+            .statusBarDarkFont(false, 0.2f)
             .init()
     }
 

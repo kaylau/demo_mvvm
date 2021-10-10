@@ -8,7 +8,7 @@ import android.os.Message
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.gyf.barlibrary.ImmersionBar
+import com.gyf.immersionbar.ImmersionBar
 import com.kay.demo.R
 import com.kay.demo.databinding.ActSplashBinding
 import java.lang.ref.WeakReference
@@ -31,8 +31,8 @@ class SplashAct : AppCompatActivity() {
 
         mDataBinding.bgRoot.animation = AnimationUtils.loadAnimation(this, R.anim.anim_splash)
 
-//        ImmersionBar.with(this).reset().fitsSystemWindows(false)
-//            .navigationBarColor(R.color.black).statusBarDarkFont(false, 0.2f).init()
+        ImmersionBar.with(this).reset().fitsSystemWindows(false)
+            .navigationBarColor(R.color.black).statusBarDarkFont(false, 0.2f).init()
 
         welcomeHandler = WelcomeHandler(this)
         welcomeHandler.removeMessages(0)

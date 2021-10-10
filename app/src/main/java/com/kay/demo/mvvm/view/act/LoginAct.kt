@@ -6,7 +6,7 @@ import com.kay.demo.R
 import com.kay.demo.base.BaseAct
 import com.kay.demo.databinding.ActLoginBinding
 import com.kay.demo.mvvm.vm.LoginVm
-import com.tbruyelle.rxpermissions2.RxPermissions
+import com.tbruyelle.rxpermissions3.RxPermissions
 
 
 /**

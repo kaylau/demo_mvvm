@@ -5,6 +5,7 @@ import android.app.Application
 import android.content.Context
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.multidex.MultiDexApplication
 import com.getkeepsafe.relinker.ReLinker
 import com.kay.demo.net.net.RetrofitClient
@@ -43,7 +44,8 @@ class GlobalApp : MultiDexApplication() {
         mContext = this
         RetrofitClient.init()
 
-        ChannelUtils.getChannelCode(this)
+        val channelCode = ChannelUtils.getChannelCode(this)
+        Log.e("tag", "channelCode = $channelCode")
 
         initMMKV()
         initActLifecycle()

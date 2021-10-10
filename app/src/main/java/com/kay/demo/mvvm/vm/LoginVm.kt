@@ -1,11 +1,8 @@
 package com.kay.demo.mvvm.vm
 
-import android.content.Intent
-import android.view.View
 import androidx.lifecycle.MutableLiveData
 import com.kay.demo.base.BaseViewModel
 import com.kay.demo.mvvm.model.LoginModel
-import com.kay.demo.mvvm.view.act.MainActivity
 import com.kay.demo.net.exc.ResultException
 import com.kay.demo.net.listener.OnResultListener
 import com.kay.demo.net.model.BaseResponse
@@ -88,8 +85,4 @@ class LoginVm : BaseViewModel<LoginModel>() {
         })
     }
 
-    fun mainAct(view: View) {
-        val context = view.context
-        context.startActivity(Intent(context, MainActivity::class.java))
-    }
 }

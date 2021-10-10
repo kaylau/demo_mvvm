@@ -34,6 +34,34 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/color_0000ff"
+                android:gravity="center"
+                android:onClick="@{(view)->vm.login(view)}"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Login"
+                    android:textColor="@color/white"
+                    android:textSize="60mm" />
+
+            </LinearLayout>
+
+        </com.lihang.ShadowLayout>
+
+        <com.lihang.ShadowLayout
+            android:layout_width="match_parent"
+            android:layout_height="150mm"
+            android:layout_margin="30mm"
+            app:hl_cornerRadius="30mm"
+            app:hl_shadowColor="#330A0A0A"
+            app:hl_shadowLimit="6mm"
+            app:hl_shadowOffsetY="6mm">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:background="@color/color_ff8800"
                 android:gravity="center"
                 android:onClick="@{(view)->vm.clickWebView(view)}"

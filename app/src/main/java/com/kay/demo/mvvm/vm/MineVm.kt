@@ -11,6 +11,7 @@ import com.bigkoo.pickerview.view.TimePickerView
 import com.kay.demo.R
 import com.kay.demo.base.BaseViewModel
 import com.kay.demo.mvvm.model.MineModel
+import com.kay.demo.mvvm.view.act.LoginAct
 import com.kay.demo.mvvm.view.act.WebViewAct
 import com.kay.demo.views.dialog.WheelViewDialog
 import com.kay.demo.views.dialog.bottom.BottomSelectUtil
@@ -25,6 +26,11 @@ import java.util.*
 class MineVm : BaseViewModel<MineModel>() {
 
     var value = MutableLiveData<String>("MineVm")
+
+    fun login(view: View) {
+        val intent = Intent(view.context, LoginAct::class.java)
+        view.context.startActivity(intent)
+    }
 
     fun clickWebView(view: View) {
         val bundle = Bundle()
